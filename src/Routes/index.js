@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Footer from "../Components/footer";
 import Header from "../Components/header";
 import Home from "../Pages/Home";
 
@@ -10,7 +11,7 @@ const Routers = () => {
       <Routes>
         <Route path="/" exact element={<Home />}></Route>
       </Routes>
-      <div>footer</div>
+      <Footer />
     </Router>
   );
 };

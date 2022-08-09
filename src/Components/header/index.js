@@ -16,13 +16,13 @@ const Header = () => {
         <SearchBar />
       </div>
       <div className={classes.signUpInBox}>
-        <Typography variant="h6">
+        <Typography variant="h6" className={classes.sign}>
           <b>Sign Up</b>
         </Typography>
         <Typography variant="h6">
           <b>|</b>
         </Typography>
-        <Typography variant="h6">
+        <Typography variant="h6" className={classes.sign}>
           <b>Sign In</b>
         </Typography>
       </div>
@@ -31,7 +31,7 @@ const Header = () => {
 };
 
 export default Header;
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   Header: {
     display: "flex",
     justifyContent: "space-between",
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     gap: "30px",
     background:
       "transparent linear-gradient(180deg, #5AA0FF 0%, #368BFF 47%, #006CFF 100%) 0% 0% no-repeat padding-box;",
-    padding: "34px 196px",
+    padding: "34px 160px",
   },
   brand: {
     fontSize: "50px",
@@ -49,5 +49,8 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     gap: "10px",
     color: "white",
+  },
+  sign: {
+    width: "78px",
   },
 }));
