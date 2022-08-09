@@ -9,13 +9,13 @@ const SearchBar = () => {
         style={{ width: "calc(100% - 75px)" }}
         placeholder="Search for sellers, products and services"
       />
-      <Button className={classes.button}>GO</Button>
+      <Button className={classes.button}>Go</Button>
     </div>
   );
 };
 
 export default SearchBar;
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   container: {
     display: "flex",
     justifyContent: "space-between",
@@ -34,5 +34,7 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "12px",
     color: "white",
     fontWeight: "bold",
+    textTransform: "capitalize",
+    fontSize: "19px",
   },
 }));
