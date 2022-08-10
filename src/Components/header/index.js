@@ -2,15 +2,14 @@ import React from "react";
 import { makeStyles, Typography } from "@material-ui/core";
 import logo from "../../assets/logo.png";
 import SearchBar from "../searchBar";
+import logoSvg from "../../assets/font-1.svg";
 const Header = () => {
   const classes = useStyles();
   return (
     <div className={classes.Header}>
-      <div style={{ display: "flex" }}>
+      <div style={{ display: "flex", alignItems: "center" }}>
         <img src={logo} alt="logo" />
-        <Typography className={classes.brand} variant="h2">
-          kaijoo
-        </Typography>
+        <img src={logoSvg} width={100} height={90} alt="kaijoo" />
       </div>
       <div style={{ width: "60%" }}>
         <SearchBar />
