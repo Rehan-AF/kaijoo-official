@@ -12,7 +12,12 @@ const CustomButton = withStyles(() => ({
     fontSize: "16px",
   },
   primary: {
-    background: "#FFFFFF",
+    background:
+      "transparent linear-gradient(180deg, #5AA0FFF7 0%, #006CFF 100%) 0% 0% no-repeat padding-box",
+    borderRadius: "26px",
+    padding: "30px 70px",
+    width: "200px",
+    marginTop: "20px",
   },
 }))(Button);
 export default CustomButton;
