@@ -4,6 +4,7 @@ import img from "../../assets/laptop.jpg";
 import levels from "../../assets/levels.png";
 import Categories from "../../Components/categories";
 import WhatWeDo from "../../Components/whatWeDo";
+import Table from "../../Components/table";
 
 const Home = () => {
   const classes = useStyles();
@@ -38,6 +39,7 @@ const Home = () => {
       <div>
         <WhatWeDo />
       </div>
+      <div>{/* <Table /> */}</div>
     </div>
   );
 };
