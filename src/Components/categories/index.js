@@ -169,6 +169,6 @@ const useStyles = makeStyles(() => ({
     display: "flex",
     justifyContent: "space-around",
     flexWrap: "wrap",
-    padding: "34px 160px",
+    padding: "10px 160px 30px 160px",
   },
 }));

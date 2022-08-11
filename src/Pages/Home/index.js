@@ -3,6 +3,7 @@ import { makeStyles, Typography } from "@material-ui/core";
 import img from "../../assets/laptop.jpg";
 import levels from "../../assets/levels.png";
 import Categories from "../../Components/categories";
+import WhatWeDo from "../../Components/whatWeDo";
 
 const Home = () => {
   const classes = useStyles();
@@ -30,9 +31,12 @@ const Home = () => {
         <div>
           <img src={levels} alt="level 1, level 2, level 3" />
         </div>
-        <div>
-          <Categories />
-        </div>
+      </div>
+      <div>
+        <Categories />
+      </div>
+      <div>
+        <WhatWeDo />
       </div>
     </div>
   );
