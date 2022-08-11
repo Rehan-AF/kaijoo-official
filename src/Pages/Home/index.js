@@ -4,7 +4,7 @@ import img from "../../assets/laptop.jpg";
 import levels from "../../assets/levels.png";
 import Categories from "../../Components/categories";
 import WhatWeDo from "../../Components/whatWeDo";
-import Table from "../../Components/table";
+import { Table1, Table2 } from "../../Components/table";
 
 const Home = () => {
   const classes = useStyles();
@@ -39,7 +39,10 @@ const Home = () => {
       <div>
         <WhatWeDo />
       </div>
-      <div>{/* <Table /> */}</div>
+      <div className={classes.tableContainer}>
+        <Table1 />
+        <Table2 />
+      </div>
     </div>
   );
 };
@@ -64,5 +67,10 @@ const useStyles = makeStyles(() => ({
     padding: "20px 0",
     boxShadow: "0px 3px 6px #00000029",
     marginBottom: "20px",
+  },
+  tableContainer: {
+    display: "flex",
+    justifyContent: "space-between",
+    padding: "0 160px 20px 160px",
   },
 }));
