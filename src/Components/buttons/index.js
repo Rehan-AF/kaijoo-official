@@ -19,5 +19,13 @@ const CustomButton = withStyles(() => ({
     width: "200px",
     marginTop: "20px",
   },
+  blue: {
+    background: "#4292FF 0% 0% no-repeat padding-box",
+    borderadius: " 8px",
+    fontWeight: "400",
+    "&:hover": {
+      background: "#4292FF 0% 0% no-repeat padding-box",
+    },
+  },
 }))(Button);
 export default CustomButton;
