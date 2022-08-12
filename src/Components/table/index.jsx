@@ -164,7 +164,7 @@ export const Table2 = () => {
     </div>
   );
 };
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   main: {
     marginTop: "10px",
     "& table, th, td": {
@@ -172,6 +172,15 @@ const useStyles = makeStyles(() => ({
     },
     "& td": {
       padding: "5px 10px",
+      [theme.breakpoints.down("xs")]: {
+        padding: "5px 0px",
+      },
+    },
+    [theme.breakpoints.down("sm")]: {
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      alignItems: "center",
     },
   },
   typo: {
@@ -187,6 +196,9 @@ const useStyles = makeStyles(() => ({
     padding: "8px 10px",
     color: "white",
     width: "171px",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+    },
   },
   table: {
     background: "#ebebeb",

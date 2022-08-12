@@ -48,7 +48,7 @@ const Home = () => {
 };
 
 export default Home;
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   home: {
     background: `url(${img})`,
     color: "white",
@@ -58,6 +58,9 @@ const useStyles = makeStyles(() => ({
   subDiv: {
     background: "#0D73FFD9 0% 0% no-repeat padding-box",
     padding: "34px 160px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "34px 30px",
+    },
   },
   sndDiv: {
     display: "flex",
@@ -67,10 +70,19 @@ const useStyles = makeStyles(() => ({
     padding: "20px 0",
     boxShadow: "0px 3px 6px #00000029",
     marginBottom: "20px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "20px 30px",
+    },
   },
   tableContainer: {
     display: "flex",
     justifyContent: "space-between",
     padding: "0 160px 20px 160px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 30px 20px 30px",
+      flexWrap: "wrap",
+      justifyContent: "center",
+      alignItems: "flex-start",
+    },
   },
 }));
