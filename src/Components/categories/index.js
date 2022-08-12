@@ -164,11 +164,14 @@ const Categories = () => {
 };
 
 export default Categories;
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   categories: {
     display: "flex",
     justifyContent: "space-around",
     flexWrap: "wrap",
     padding: "10px 160px 30px 160px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 30px 20px 30px",
+    },
   },
 }));

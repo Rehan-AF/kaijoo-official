@@ -32,7 +32,7 @@ const WhatWeDo = () => {
 };
 
 export default WhatWeDo;
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   topHead: {
     height: "40px",
     borderRadius: "10% 5% 28% 0% / 0% 100% 0% 10%  ",
@@ -58,5 +58,8 @@ const useStyles = makeStyles(() => ({
   },
   lastDivTypo: {
     padding: "34px 160px 34px 160px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "34px 30px 34px 30px",
+    },
   },
 }));

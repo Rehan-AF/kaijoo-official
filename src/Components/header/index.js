@@ -3,6 +3,7 @@ import { makeStyles, Typography } from "@material-ui/core";
 import logo from "../../assets/logo.png";
 import SearchBar from "../searchBar";
 import logoSvg from "../../assets/font-1.svg";
+import SwipeableTemporaryDrawer from "../drawer";
 const Header = () => {
   const classes = useStyles();
   return (
@@ -11,7 +12,7 @@ const Header = () => {
         <img src={logo} alt="logo" />
         <img src={logoSvg} width={100} height={90} alt="kaijoo" />
       </div>
-      <div style={{ width: "60%" }}>
+      <div className={classes.SearchBar} style={{ width: "60%" }}>
         <SearchBar />
       </div>
       <div className={classes.signUpInBox}>
@@ -25,12 +26,15 @@ const Header = () => {
           <b>Sign In</b>
         </Typography>
       </div>
+      <div className={classes.drawer}>
+        <SwipeableTemporaryDrawer />
+      </div>
     </div>
   );
 };
 
 export default Header;
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   Header: {
     display: "flex",
     justifyContent: "space-between",
@@ -40,16 +44,38 @@ const useStyles = makeStyles(() => ({
     background:
       "transparent linear-gradient(180deg, #5AA0FF 0%, #368BFF 47%, #006CFF 100%) 0% 0% no-repeat padding-box;",
     padding: "34px 160px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "0 30px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      padding: "0 30px",
+      borderRadius: "0px",
+    },
   },
   brand: {
     fontSize: "50px",
+  },
+  SearchBar: {
+    width: "60%",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   signUpInBox: {
     display: "flex",
     gap: "10px",
     color: "white",
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   sign: {
     width: "78px",
+  },
+  drawer: {
+    display: "none",
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+    },
   },
 }));

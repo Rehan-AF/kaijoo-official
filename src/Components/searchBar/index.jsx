@@ -6,7 +6,7 @@ const SearchBar = () => {
   return (
     <div className={classes.container}>
       <InputBase
-        style={{ width: "calc(100% - 75px)" }}
+        className={classes.input}
         placeholder="Search for sellers, products and services"
       />
       <Button className={classes.button}>Go</Button>
@@ -15,7 +15,7 @@ const SearchBar = () => {
 };
 
 export default SearchBar;
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     justifyContent: "space-between",
@@ -26,6 +26,9 @@ const useStyles = makeStyles(() => ({
     borderRadius: "12px",
     width: "100%",
     padding: "0 3px 0 12px",
+    [theme.breakpoints.down("sm")]: {
+      width: "90%",
+    },
   },
   button: {
     background:
@@ -36,5 +39,8 @@ const useStyles = makeStyles(() => ({
     fontWeight: "bold",
     textTransform: "capitalize",
     fontSize: "19px",
+  },
+  input: {
+    width: "calc(100% - 75px)",
   },
 }));

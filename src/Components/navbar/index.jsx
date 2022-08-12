@@ -10,15 +10,11 @@ const Navbar = () => {
     color: "#006CFF",
     borderBottom: "5px solid #FF6600",
     paddingBottom: "3px",
-    marginRight: "20px",
-    fontSize: "18px",
     fontWeight: "500",
   };
   let inactive = {
     color: "#006CFF",
     textDecoration: "none",
-    marginRight: "20px",
-    fontSize: "18px",
     fontWeight: "500",
   };
   return (
@@ -26,30 +22,35 @@ const Navbar = () => {
       <NavLink
         to="/"
         style={({ isActive }) => (isActive ? activeStyle : inactive)}
+        className={classes.link}
       >
         Home
       </NavLink>
       <NavLink
         to="/reviews"
         style={({ isActive }) => (isActive ? activeStyle : inactive)}
+        className={classes.link}
       >
         Reviews
       </NavLink>
       <NavLink
         to="/blog"
         style={({ isActive }) => (isActive ? activeStyle : inactive)}
+        className={classes.link}
       >
         Blogs
       </NavLink>
       <NavLink
         to="/about"
         style={({ isActive }) => (isActive ? activeStyle : inactive)}
+        className={classes.link}
       >
         About Us
       </NavLink>
       <NavLink
         to="/contact"
         style={({ isActive }) => (isActive ? activeStyle : inactive)}
+        className={classes.link}
       >
         Contact Us
       </NavLink>
@@ -58,10 +59,14 @@ const Navbar = () => {
 };
 
 export default Navbar;
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   navbar: {
     display: "flex",
     padding: "15px 160px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "15px 30px",
+      fontSize: "16px",
+    },
   },
   inactive: {
     color: "#006CFF",
@@ -71,5 +76,12 @@ const useStyles = makeStyles(() => ({
   active: {
     textDecoration: "none",
     color: "#006CFF",
+  },
+  link: {
+    fontSize: "18px",
+    marginRight: "10px",
+    [theme.breakpoints.down("sm")]: {
+      fontSize: "12px",
+    },
   },
 }));

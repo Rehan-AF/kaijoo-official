@@ -22,7 +22,7 @@ const Footer = () => {
 };
 
 export default Footer;
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   footer: {
     display: "flex",
     justifyContent: "center",
@@ -33,6 +33,12 @@ const useStyles = makeStyles(() => ({
     background:
       "transparent linear-gradient(180deg, #5AA0FF 0%, #368BFF 47%, #006CFF 100%) 0% 0% no-repeat padding-box;",
     padding: "19px 160px 28px 160px",
+    [theme.breakpoints.down("sm")]: {
+      padding: "19px 30px 28px 30px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      borderRadius: "0px",
+    },
   },
   typo: {
     color: "#FFFFFF",
