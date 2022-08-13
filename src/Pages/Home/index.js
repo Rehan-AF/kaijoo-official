@@ -1,13 +1,19 @@
 import React from "react";
 import { makeStyles, Typography } from "@material-ui/core";
+import { Table1, Table2 } from "../../Components/table";
 import img from "../../assets/laptop.jpg";
-import levels from "../../assets/levels.png";
+import level1 from "../../assets/level1.png";
+import level2 from "../../assets/level2.png";
+import level3 from "../../assets/level3.png";
 import Categories from "../../Components/categories";
 import WhatWeDo from "../../Components/whatWeDo";
-import { Table1, Table2 } from "../../Components/table";
+import { Link, useParams } from "react-router-dom";
 
 const Home = () => {
   const classes = useStyles();
+  const id1 = 1;
+  const id2 = 2;
+  const id3 = 3;
   return (
     <div>
       <div className={classes.home}>
@@ -29,8 +35,16 @@ const Home = () => {
           Hey! Looking for something exciting and trustable? Click now to view
           our certified sellers.
         </Typography>
-        <div>
-          <img src={levels} alt="level 1, level 2, level 3" />
+        <div className={classes.levelBox}>
+          <Link to={`/seller/${id1}`}>
+            <img src={level1} alt="level 1" />
+          </Link>
+          <Link to={`/seller/${id2}`}>
+            <img src={level2} alt="level 2" />
+          </Link>
+          <Link to={`/seller/${id3}`}>
+            <img src={level3} alt="level 3" />
+          </Link>
         </div>
       </div>
       <div>
@@ -84,5 +98,9 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "center",
       alignItems: "flex-start",
     },
+  },
+  levelBox: {
+    display: "flex",
+    gap: "10px",
   },
 }));

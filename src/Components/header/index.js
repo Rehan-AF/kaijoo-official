@@ -4,13 +4,18 @@ import logo from "../../assets/logo.png";
 import SearchBar from "../searchBar";
 import logoSvg from "../../assets/font-1.svg";
 import SwipeableTemporaryDrawer from "../drawer";
+import { Link } from "react-router-dom";
 const Header = () => {
   const classes = useStyles();
   return (
     <div className={classes.Header}>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <img src={logo} alt="logo" />
-        <img src={logoSvg} width={100} height={90} alt="kaijoo" />
+        <Link to="/">
+          <img src={logo} alt="logo" />
+        </Link>
+        <Link to="/">
+          <img src={logoSvg} width={100} height={90} alt="kaijoo" />
+        </Link>
       </div>
       <div className={classes.SearchBar} style={{ width: "60%" }}>
         <SearchBar />
@@ -43,12 +48,11 @@ const useStyles = makeStyles((theme) => ({
     gap: "30px",
     background:
       "transparent linear-gradient(180deg, #5AA0FF 0%, #368BFF 47%, #006CFF 100%) 0% 0% no-repeat padding-box;",
-    padding: "34px 160px",
+    padding: "15px 160px",
     [theme.breakpoints.down("sm")]: {
       padding: "0 30px",
     },
     [theme.breakpoints.down("xs")]: {
-      padding: "0 30px",
       borderRadius: "0px",
     },
   },

@@ -12,9 +12,15 @@ const SellerCard = () => {
         <img src={shopIcon} alt="logo" />
       </div>
       <div className={classes.details}>
-        <Typography>Seller Name</Typography>
+        <Typography className={classes.typo}>Seller Name</Typography>
         <Typography>Description about seller</Typography>
-        <CustomButton children="Click Now" variant="blue" />
+        <div className={classes.btnBox}>
+          <CustomButton
+            children="Click Now"
+            variant="blue"
+            className={classes.btn}
+          />
+        </div>
       </div>
     </div>
   );
@@ -28,10 +34,22 @@ const useStyles = makeStyles((theme) => ({
     gap: "36px",
     background: "#FFFFFF 0% 0% no-repeat padding-box",
     boxShadow: "0px 3px 6px #00000029",
+    padding: "25px 20px",
   },
   logo: {
     display: "flex",
     flexDirection: "column",
     gap: "10px",
+  },
+  typo: {
+    fontWeight: "bold",
+  },
+  btnBox: {
+    marginTop: "10px",
+    display: "flex",
+    justifyContent: "center",
+  },
+  btn: {
+    borderRadius: "50px",
   },
 }));
