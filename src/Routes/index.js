@@ -5,6 +5,7 @@ import Footer from "../Components/footer";
 import Header from "../Components/header";
 import Navbar from "../Components/navbar";
 import Home from "../Pages/Home";
+import Seller from "../Pages/seller";
 
 const Routers = () => {
   return (
@@ -17,6 +18,7 @@ const Routers = () => {
         <Route path="/about" exact element={<Home />}></Route>
         <Route path="/contact" exact element={<Home />}></Route>
         <Route path="/reviews" exact element={<Home />}></Route>
+        <Route path="/seller/:id" exact element={<Seller />}></Route>
       </Routes>
       <Footer />
     </Router>
