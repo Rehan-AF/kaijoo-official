@@ -1,24 +1,25 @@
 import { Checkbox, makeStyles, Typography } from "@material-ui/core";
 import React, { useState } from "react";
 
-const CheckBox = ({ label }) => {
+const CheckBox = ({ label, value, checked = false, onChange = () => null }) => {
   /**
    * @param {string} label
    */
   const classes = useStyles();
-  const [checked, setChecked] = useState(false);
-
+  const [_checked, setChecked] = useState(false);
   const handleChange = (event) => {
     setChecked(event.target.checked);
+    onChange(event);
   };
 
   return (
     <div className={classes.container}>
       <Checkbox
-        checked={checked}
+        checked={checked || _checked}
         onChange={handleChange}
         inputProps={"primary checkbox"}
         color="primary"
+        value={value}
       />
       <Typography className={classes.label}>{label}</Typography>
     </div>

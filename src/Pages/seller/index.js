@@ -26,7 +26,7 @@ const Seller = () => {
         </div>
       </div>
       <div>
-        <FilterSellerLevel />
+        <FilterSellerLevel id={id} />
       </div>
       <div>
         <WhatWeDo />
