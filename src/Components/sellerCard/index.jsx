@@ -3,7 +3,7 @@ import React from "react";
 import logoMain from "../../assets/iconMain.png";
 import shopIcon from "../../assets/shopIcon.png";
 import CustomButton from "../buttons";
-const SellerCard = () => {
+const SellerCard = ({ level, SellerName, Description }) => {
   const classes = useStyles();
   return (
     <div className={classes.container}>
@@ -12,8 +12,9 @@ const SellerCard = () => {
         <img src={shopIcon} alt="logo" />
       </div>
       <div className={classes.details}>
-        <Typography className={classes.typo}>Seller Name</Typography>
-        <Typography>Description about seller</Typography>
+        <Typography className={classes.typo}>{SellerName}</Typography>
+        <Typography>{Description}</Typography>
+        <div>{level}</div>
         <div className={classes.btnBox}>
           <CustomButton
             children="Click Now"
