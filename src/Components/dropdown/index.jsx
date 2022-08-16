@@ -26,7 +26,7 @@ export default function Dropdown({ id, setFilterValue }) {
     setOpen(false);
   };
   const handleValue = (e) => {
-    const value = e.target.value;
+    const value = parseInt(e.target.value);
     const isActive = e.target.checked;
     if (!values.includes(value)) setValues([...values, value]);
     if (values.includes(value) && !isActive)

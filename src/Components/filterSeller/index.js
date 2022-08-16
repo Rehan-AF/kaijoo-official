@@ -1,25 +1,29 @@
 import { makeStyles, Typography } from "@material-ui/core";
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Dropdown from "../dropdown";
 import SellerCard from "../sellerCard";
 import data from "./items";
 const FilterSellerLevel = ({ id }) => {
   const classes = useStyles();
-  const [filterValue, setFilterValue] = useState([`${id}`]);
+  const [filterValue, setFilterValue] = useState([parseInt(id)]);
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    setFilteredData(data);
-  }, []);
-  function getFilteredList() {
-    // Avoid filter when selectedCategory is null
-    if (!filterValue) {
-      return filteredData;
+    setFilterValue([parseInt(id)]);
+  }, [id]);
+
+  useEffect(() => {
+    function getFilteredList() {
+      // Avoid filter when selectedCategory is null
+      if (!filterValue.length) return setFilteredData([...data]);
+
+      setFilteredData(
+        data.filter((item) => filterValue.includes(parseInt(item.level)))
+      );
     }
-    return filteredData.filter((item) => item.level == filterValue);
-  }
-  console.log(filterValue);
-  var filteredList = useMemo(getFilteredList, [filterValue, filteredData]);
+    getFilteredList();
+  }, [filterValue]);
+
   return (
     <div className={classes.container}>
       <div className={classes.head}>
@@ -27,7 +31,7 @@ const FilterSellerLevel = ({ id }) => {
         <Dropdown id={id} setFilterValue={setFilterValue} />
       </div>
       <div className={classes.cardContainer}>
-        {filteredList?.map(({ level, sellerName, Description }, index) => (
+        {filteredData.map(({ level, sellerName, Description }, index) => (
           <SellerCard
             key={index}
             level={level}
