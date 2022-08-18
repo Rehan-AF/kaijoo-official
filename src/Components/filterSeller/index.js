@@ -30,6 +30,7 @@ const FilterSellerLevel = ({ id }) => {
         <Typography className={classes.typo}>Filter</Typography>
         <Dropdown id={id} setFilterValue={setFilterValue} />
       </div>
+      <br />
       <div className={classes.cardContainer}>
         {filteredData.map(({ level, sellerName, Description }, index) => (
           <SellerCard
