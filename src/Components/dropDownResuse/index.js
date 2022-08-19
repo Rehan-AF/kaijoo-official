@@ -8,9 +8,13 @@ import Plateform from "./plateform";
 import Countries from "./Countries";
 import Ratings from "./Rating";
 import Catagories from "./Catagories";
+import { useDispatch } from "react-redux";
+import { selectData } from "../../features/chipDataSlicer/chipDataslicer";
 
 export default function Dropdown({ label }) {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
   const [open, setOpen] = useState(false);
   const [values, setValues] = useState([]);
 
@@ -21,6 +25,12 @@ export default function Dropdown({ label }) {
   // }, [id]);
   useEffect(() => {
     // setFilterValue(values);
+    // dispatch(selectData(values));
+    {
+      values.map((item) => {
+        return dispatch(selectData(item));
+      });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values]);
   const handleClick = () => {
