@@ -6,7 +6,7 @@ import Header from "../Components/header";
 import Navbar from "../Components/navbar";
 import Home from "../Pages/Home";
 import Seller from "../Pages/seller";
-
+import Reviews from "../Pages/reviewDetailPage";
 const Routers = () => {
   return (
     <Router>
@@ -17,7 +17,7 @@ const Routers = () => {
         <Route path="/blog" exact element={<Blog />}></Route>
         <Route path="/about" exact element={<Home />}></Route>
         <Route path="/contact" exact element={<Home />}></Route>
-        <Route path="/reviews" exact element={<Home />}></Route>
+        <Route path="/reviews" exact element={<Reviews />}></Route>
         <Route path="/seller/:id" exact element={<Seller />}></Route>
       </Routes>
       <Footer />
