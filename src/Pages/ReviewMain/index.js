@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import DropdownReUse from "../../Components/dropDownResuse";
-import { Typography, makeStyles } from "@material-ui/core";
+import { Typography, makeStyles, Chip } from "@material-ui/core";
+import { useSelector, useDispatch } from "react-redux";
 
 const ReviewMain = () => {
   const classes = useStyles();
+
+  const handleDelete = () => {
+    console.info("You clicked the delete icon.");
+  };
+
+  const {
+    chipDataSlicer: { data },
+  } = useSelector((state) => state);
+
+  useEffect(() => {}, [data]);
+
   return (
     <>
       <div className={classes.container}>
@@ -13,6 +25,24 @@ const ReviewMain = () => {
           <DropdownReUse label="Countries" />
           <DropdownReUse label="Ratings" />
           <DropdownReUse label="Catagories" />
+        </div>
+        <div className={classes.body}>
+          <div className={classes.leftSide}>
+            {data.map((item) => {
+              return (
+                <div className={classes.chipList}>
+                  <Chip
+                    size="large"
+                    label={item}
+                    onDelete={handleDelete}
+                    color="primary"
+                    className={classes.chip}
+                  />
+                </div>
+              );
+            })}
+          </div>
+          <div className={classes.rightSide}></div>
         </div>
       </div>
     </>
@@ -33,6 +63,21 @@ const useStyles = makeStyles((theme) => ({
   },
   typo: {
     fontWeight: "bold",
+  },
+  body: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "30px",
+  },
+  leftSide: {
+    padding: "1em",
+    width: "200px",
+  },
+  chipList: {
+    display: "flex",
+    flexDirection: "column",
+    gap: "30px",
+    paddingBottom: "1em",
   },
 }));
 
