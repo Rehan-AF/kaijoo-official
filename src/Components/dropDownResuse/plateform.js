@@ -1,15 +1,15 @@
 const Plateform = [
   {
     Name: "Lazada",
-    value: "lazada",
+    value: "Lazada",
   },
   {
     Name: "Shopee",
-    value: "shopee",
+    value: "Shopee",
   },
   {
     Name: "Youbeli",
-    value: "youbeli",
+    value: "Youbeli",
   },
 ];
 export default Plateform;

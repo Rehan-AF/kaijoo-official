@@ -1,23 +1,23 @@
 const Ratings = [
   {
     Name: "Five",
-    value: "five",
+    value: "Five",
   },
   {
     Name: "Four",
-    value: "four",
+    value: "Four",
   },
   {
     Name: "Three",
-    value: "three",
+    value: "Three",
   },
   {
     Name: "Two",
-    value: "two",
+    value: "Two",
   },
   {
     Name: "One",
-    value: "one",
+    value: "One",
   },
 ];
 export default Ratings;
