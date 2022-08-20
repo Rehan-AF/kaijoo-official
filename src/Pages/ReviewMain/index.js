@@ -4,6 +4,8 @@ import { Typography, makeStyles, Chip } from "@material-ui/core";
 import { useSelector, useDispatch } from "react-redux";
 import CustomChip from "../../Components/chip";
 import { removeData } from "../../features/chipDataSlicer/chipDataslicer";
+import { ReviewCard } from "../../Components/reviewCard";
+
 const ReviewMain = () => {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -51,6 +53,9 @@ const ReviewMain = () => {
             })}
           </div>
           <div className={classes.rightSide}></div>
+        </div>
+        <div>
+          <ReviewCard />
         </div>
       </div>
     </>

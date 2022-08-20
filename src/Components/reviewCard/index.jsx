@@ -1,11 +1,11 @@
-import { makeStyles, Typography } from "@material-ui/core";
+import { Button, makeStyles, Typography } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import React from "react";
 import shopIcon from "../../assets/shopIcon.png";
 import logo from "../../assets/philips.png";
-import CustomizedProgressBars from "../progressBar";
+import CustomButton from "../buttons";
 
-const ReviewDetails = ({
+export const ReviewCard = ({
   value = 5,
   title,
   description,
@@ -50,29 +50,13 @@ const ReviewDetails = ({
             <Typography className={classes.rating}>{rating}</Typography>
           </div>
         </div>
-        <div>
-          <div className={classes.ratingBox}>
-            <CustomizedProgressBars value={positive} />
-            <Typography>Positive</Typography>
-          </div>
-          <div className={classes.ratingBox}>
-            <CustomizedProgressBars value={negative} />
-            <Typography>Neutal</Typography>
-          </div>
-          <div className={classes.ratingBox}>
-            <CustomizedProgressBars value={neutral} />
-            <Typography>Negative</Typography>
-          </div>
+        <div style={{ textAlign: "center" }}>
+          <CustomButton variant="darkBlue" children="Review Now" />
         </div>
       </div>
     </div>
   );
 };
-
-export default ReviewDetails;
-
-////////////////////////////////////////////////////////////////////////////
-
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
@@ -101,7 +85,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "20px",
   },
   ratingDetails: {
-    marginLeft: "15px",
+    paddingLeft: "15px",
+    width: "160px",
+    borderLeft: "0.5px solid #7070705c",
   },
   ratingBox: {
     display: "flex",
@@ -111,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "flex-end",
     gap: "10px",
-    marginBottom: "10px",
+    marginBottom: "20px",
   },
   rating: {
     background: "#0364FF 0% 0% no-repeat padding-box",
