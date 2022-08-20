@@ -15,12 +15,18 @@ const Routers = () => {
       <Header />
       <Navbar />
       <Routes>
-        <Route path="/" exact element={<Home />}></Route>
+        {["/home", "/"].map((path) => (
+          <Route exact path={path} key={path} element={<Home />} />
+        ))}
         <Route path="/blog" exact element={<Blog />}></Route>
         <Route path="/about" exact element={<Home />}></Route>
         <Route path="/contact" exact element={<Home />}></Route>
         <Route path="/reviews" exact element={<Review />}></Route>
-        <Route path="/reviewsDetails" exact element={<Reviews />}></Route>
+        <Route
+          path="/reviews/reviewsDetails"
+          exact
+          element={<Reviews />}
+        ></Route>
         <Route path="/seller/:id" exact element={<Seller />}></Route>
       </Routes>
       <Footer />

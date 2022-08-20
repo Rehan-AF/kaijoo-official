@@ -70,7 +70,56 @@ const ReviewDetails = ({
 };
 
 export default ReviewDetails;
-
+export const ReviewCard = ({
+  value = 5,
+  title,
+  description,
+  positive = 70,
+  negative = 47,
+  neutral = 10,
+  rating = 7.8,
+}) => {
+  const classes = useStyles();
+  return (
+    <div className={classes.container}>
+      <div>
+        <img src={logo} alt="logo" className={classes.img} />
+      </div>
+      <div>
+        <Typography className={classes.title}>
+          {title || "Philips Lighting Official Store SG"}
+        </Typography>
+        <Typography className={classes.description}>
+          {description ||
+            "Buy Ceiling Lights, LED Bulbs, Compact Fluorescent Bulbs from Philips Hue, philips lighting official & much more at Philips Lighting."}
+        </Typography>
+        <div>
+          <img src={shopIcon} alt="icon" className={classes.Shopicon} />
+          <Rating
+            className={classes.stars}
+            name="read-only"
+            value={value}
+            readOnly
+          />
+        </div>
+      </div>
+      <div className={classes.ratingDetails}>
+        <div className={classes.ratingContainer}>
+          <div>
+            <Typography className={classes.typo}>Very Good</Typography>
+            <Typography className={classes.typoSmall}>
+              {positive + negative + neutral} reviews
+            </Typography>
+          </div>
+          <div>
+            <Typography className={classes.rating}>{rating}</Typography>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  );
+};
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
