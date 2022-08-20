@@ -27,5 +27,14 @@ const CustomButton = withStyles(() => ({
       background: "#4292FF 0% 0% no-repeat padding-box",
     },
   },
+  darkBlue: {
+    background: "#0364FF 0% 0% no-repeat padding-box",
+    borderRadius: "18px",
+    fontSize: "13px",
+    fontWeight: "400",
+    "&:hover": {
+      background: "#0364FF 0% 0% no-repeat padding-box",
+    },
+  },
 }))(Button);
 export default CustomButton;
