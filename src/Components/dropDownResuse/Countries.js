@@ -1,15 +1,15 @@
 const Countries = [
   {
     Name: "England",
-    value: "england",
+    value: "England",
   },
   {
     Name: "Belgium",
-    value: "belgium",
+    value: "Belgium",
   },
   {
     Name: "London",
-    value: "london",
+    value: "London",
   },
 ];
 export default Countries;

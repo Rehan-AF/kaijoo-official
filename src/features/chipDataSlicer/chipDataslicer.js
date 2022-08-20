@@ -14,8 +14,13 @@ const chipDataSlicer = createSlice({
         }
       }
     },
+    removeData: (state, action) => {
+      if (action.payload) {
+        state.data = state.data.filter((chip) => chip !== action.payload);
+      }
+    },
   },
 });
 
-export const { selectData } = chipDataSlicer.actions;
+export const { selectData, removeData } = chipDataSlicer.actions;
 export default chipDataSlicer.reducer;
