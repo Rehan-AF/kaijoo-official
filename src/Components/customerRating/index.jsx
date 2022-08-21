@@ -3,10 +3,19 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined"
 import { makeStyles, Typography } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import pic from "../../assets/philips.png";
+import {
+  AddBox,
+  Facebook,
+  LinkRounded,
+  MailRounded,
+  Twitter,
+} from "@material-ui/icons";
+
 const CustomerReview = ({
   name = "Lazada Customer",
   value = 5,
   description = "Seller is awesome. Delivery in the next day. Very impressive.",
+  date = "2 years ago",
 }) => {
   const classes = useStyles();
   return (
@@ -14,9 +23,12 @@ const CustomerReview = ({
       <div>
         <AccountCircleOutlinedIcon className={classes.user} />
       </div>
-      <div>
+      <div className={classes.details}>
         <div>
-          <Typography className={classes.name}>{name}</Typography>
+          <div className={classes.title}>
+            <Typography className={classes.name}>{name}</Typography>
+            <Typography className={classes.date}>{date}</Typography>
+          </div>
           <Rating
             className={classes.stars}
             name="read-only"
@@ -25,25 +37,34 @@ const CustomerReview = ({
           />
           <Typography className={classes.description}>{description}</Typography>
         </div>
-        <div style={{ display: "flex" }}>
-          <img
-            className={classes.imgComment}
-            src={pic}
-            alt="pic"
-            width="70px"
-          />
-          <img
-            className={classes.imgComment}
-            src={pic}
-            alt="pic"
-            width="70px"
-          />
-          <img
-            className={classes.imgComment}
-            src={pic}
-            alt="pic"
-            width="70px"
-          />
+        <div className={classes.pictureBpx}>
+          <div>
+            <img
+              className={classes.imgComment}
+              src={pic}
+              alt="pic"
+              width="70px"
+            />
+            <img
+              className={classes.imgComment}
+              src={pic}
+              alt="pic"
+              width="70px"
+            />
+            <img
+              className={classes.imgComment}
+              src={pic}
+              alt="pic"
+              width="70px"
+            />
+          </div>
+          <div>
+            <AddBox className={classes.addBox} />
+            <Facebook className={classes.facebook} />
+            <Twitter className={classes.twitter} />
+            <MailRounded className={classes.mailRounded} />
+            <LinkRounded className={classes.linkRounded} />
+          </div>
         </div>
       </div>
     </div>
@@ -58,6 +79,13 @@ const useStyles = makeStyles((theme) => ({
     gap: 20,
     padding: "36px",
   },
+  title: {
+    display: "flex",
+    justifyContent: "space-between",
+  },
+  details: {
+    flexGrow: 1,
+  },
   user: {
     fontSize: "40px",
   },
@@ -65,6 +93,9 @@ const useStyles = makeStyles((theme) => ({
     fontSize: 13,
     fontWeight: "bold",
     marginBottom: 5,
+  },
+  date: {
+    fontSize: 13,
   },
   stars: {
     fontSize: 16,
@@ -78,5 +109,35 @@ const useStyles = makeStyles((theme) => ({
     border: "1px solid black",
     padding: "5px",
     margin: "5px",
+  },
+  pictureBpx: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "baseline",
+  },
+  addBox: {
+    color: "#347deb",
+    fontSize: "30px",
+    cursor: "pointer",
+  },
+  facebook: {
+    color: "#4267B2",
+    fontSize: "30px",
+    cursor: "pointer",
+  },
+  twitter: {
+    color: "#00acee",
+    fontSize: "30px",
+    cursor: "pointer",
+  },
+  mailRounded: {
+    color: "#347deb",
+    fontSize: "30px",
+    cursor: "pointer",
+  },
+  linkRounded: {
+    transform: "rotate(-45deg) ",
+    marginBottom: "3px",
+    cursor: "pointer",
   },
 }));
