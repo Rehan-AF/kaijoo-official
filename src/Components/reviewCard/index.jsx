@@ -4,6 +4,7 @@ import React from "react";
 import shopIcon from "../../assets/shopIcon.png";
 import logo from "../../assets/philips.png";
 import CustomButton from "../buttons";
+import { Link } from "react-router-dom";
 
 export const ReviewCard = ({
   value = 5,
@@ -51,7 +52,9 @@ export const ReviewCard = ({
           </div>
         </div>
         <div style={{ textAlign: "center" }}>
-          <CustomButton variant="darkBlue" children="Review Now" />
+          <Link to="/reviews/reviewsDetails">
+            <CustomButton variant="darkBlue" children="Review Now" />
+          </Link>
         </div>
       </div>
     </div>
