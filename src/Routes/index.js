@@ -8,6 +8,7 @@ import Home from "../Pages/Home";
 import Seller from "../Pages/seller";
 import Reviews from "../Pages/reviewDetailPage";
 import Review from "../Pages/ReviewMain";
+import ReviewTextEditor from "../Components/reviewTextEditor";
 
 const Routers = () => {
   return (
@@ -28,6 +29,7 @@ const Routers = () => {
           element={<Reviews />}
         ></Route>
         <Route path="/seller/:id" exact element={<Seller />}></Route>
+        <Route path="/text" exact element={<ReviewTextEditor />}></Route>
       </Routes>
       <Footer />
     </Router>
