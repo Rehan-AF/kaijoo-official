@@ -7,6 +7,11 @@ const BorderLinearProgress = withStyles((theme) => ({
   root: {
     height: 10,
     borderRadius: 5,
+    width: 200,
+    [theme.breakpoints.down("xs")]: {
+      width: 150,
+      margin: "0 auto",
+    },
   },
   colorPrimary: {
     backgroundColor: "transparent",
@@ -36,9 +41,9 @@ const useStyles = makeStyles({
     alignItems: "center",
     flexDirection: "row-reverse",
     gap: "10px",
+    justifyContent: "flex-start",
   },
   progress: {
-    width: 200,
     transform: "rotate(180deg)",
   },
 });
