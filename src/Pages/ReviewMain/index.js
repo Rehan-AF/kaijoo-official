@@ -52,10 +52,9 @@ const ReviewMain = () => {
               );
             })}
           </div>
-          <div className={classes.rightSide}></div>
-        </div>
-        <div>
-          <ReviewCard />
+          <div className={classes.rightSide}>
+            <ReviewCard />
+          </div>
         </div>
       </div>
     </>
@@ -73,18 +72,19 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     gap: "20px",
+    flexWrap: "wrap",
   },
   typo: {
     fontWeight: "bold",
   },
   body: {
     display: "flex",
-    flexDirection: "column",
-    gap: "30px",
-  },
-  leftSide: {
-    padding: "1em",
-    width: "200px",
+    flexDirection: "row",
+    gap: "50px",
+    marginTop: "30px",
+    [theme.breakpoints.down("xs")]: {
+      flexDirection: "column",
+    },
   },
   chipList: {
     // display: "flex",
