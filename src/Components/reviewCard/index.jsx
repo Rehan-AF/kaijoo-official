@@ -72,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       alignItems: "flex-start",
     },
+    [theme.breakpoints.down("xs")]: {
+      alignItems: "center",
+    },
   },
   details: {
     borderRight: "0.5px solid #7070705c",
@@ -105,6 +108,10 @@ const useStyles = makeStyles((theme) => ({
     gap: "10px",
     marginBottom: "20px",
     width: "127px",
+    [theme.breakpoints.down("xs")]: {
+      justifyContent: "center",
+      width: "100%",
+    },
   },
   rating: {
     background: "#0364FF 0% 0% no-repeat padding-box",
