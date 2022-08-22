@@ -21,7 +21,7 @@ export const ReviewCard = ({
       <div>
         <img src={logo} alt="logo" className={classes.img} />
       </div>
-      <div>
+      <div className={classes.details}>
         <Typography className={classes.title}>
           {title || "Philips Lighting Official Store SG"}
         </Typography>
@@ -52,7 +52,7 @@ export const ReviewCard = ({
           </div>
         </div>
         <div style={{ textAlign: "center" }}>
-          <Link to="/reviews/reviewsDetails">
+          <Link to="/reviews/reviewsDetails" className={classes.links}>
             <CustomButton variant="darkBlue" children="Review Now" />
           </Link>
         </div>
@@ -72,6 +72,17 @@ const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       alignItems: "flex-start",
     },
+    [theme.breakpoints.down("xs")]: {
+      alignItems: "center",
+    },
+  },
+  details: {
+    borderRight: "0.5px solid #7070705c",
+    paddingRight: "15px",
+    [theme.breakpoints.down("sm")]: {
+      border: "none",
+      paddingRight: "0",
+    },
   },
   title: {
     fontWeight: "bold",
@@ -87,11 +98,6 @@ const useStyles = makeStyles((theme) => ({
   stars: {
     fontSize: "20px",
   },
-  ratingDetails: {
-    paddingLeft: "15px",
-    width: "160px",
-    borderLeft: "0.5px solid #7070705c",
-  },
   ratingBox: {
     display: "flex",
     gap: "10px",
@@ -101,6 +107,11 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "flex-end",
     gap: "10px",
     marginBottom: "20px",
+    width: "127px",
+    [theme.breakpoints.down("xs")]: {
+      justifyContent: "center",
+      width: "100%",
+    },
   },
   rating: {
     background: "#0364FF 0% 0% no-repeat padding-box",
@@ -114,5 +125,8 @@ const useStyles = makeStyles((theme) => ({
   typoSmall: {
     fontSize: "12px",
     textAlign: "right",
+  },
+  links: {
+    textDecoration: "none",
   },
 }));

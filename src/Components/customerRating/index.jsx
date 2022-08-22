@@ -1,6 +1,6 @@
 import React from "react";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
-import { makeStyles, Typography } from "@material-ui/core";
+import { Divider, makeStyles, Typography } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import pic from "../../assets/philips.png";
 import {
@@ -67,6 +67,7 @@ const CustomerReview = ({
           </div>
         </div>
       </div>
+      <Divider />
     </div>
   );
 };
@@ -76,6 +77,7 @@ export default CustomerReview;
 const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
+    flexDirection: "column",
     gap: 20,
     padding: "36px",
   },
@@ -114,6 +116,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "baseline",
+    [theme.breakpoints.down("sm")]: {
+      flexWrap: "wrap",
+    },
   },
   addBox: {
     color: "#347deb",
