@@ -3,11 +3,14 @@ import { Typography, Box, makeStyles } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import CustomButton from "../buttons";
 import CustomInputField from "../textField";
+import { useDispatch } from "react-redux";
+import { setCancel } from "../../features/ratingNextSlicer/ratingNextSlicer";
 
 const ReviewTextEditor = () => {
+  const dispatch = useDispatch();
   const classes = useStyles();
   return (
-    <Box>
+    <Box className={classes.container}>
       <Box mb={3} className={classes.rating}>
         <Typography className={classes.ratingText}>Perfect</Typography>
         <Rating name="read-only" value={5} readOnly />
@@ -26,10 +29,16 @@ const ReviewTextEditor = () => {
           multiline
           maxRows={5}
           variant="outlined"
+          className={classes.textInput}
         />
       </Box>
       <Box className={classes.quickButton}>
-        <CustomButton variant="outlined" type="darkBlue">
+        <CustomButton
+          variant="outline"
+          onClick={() => {
+            dispatch(setCancel());
+          }}
+        >
           Cancel
         </CustomButton>
         <CustomButton variant="darkBlue" className={classes.submitBtn}>
@@ -43,6 +52,14 @@ const ReviewTextEditor = () => {
 export default ReviewTextEditor;
 
 const useStyles = makeStyles((theme) => ({
+  container: {
+    background: "white",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    flexDirection: "column",
+    padding: "10px 10px 20px 10px",
+  },
   ratingText: {
     fontWeight: "bold",
   },
@@ -64,13 +81,15 @@ const useStyles = makeStyles((theme) => ({
   },
   quickButton: {
     display: "flex",
-    justifyContent: "center",
+    justifyContent: "space-between",
     padding: "1em",
   },
   textBox: {
     textAlign: "center",
-    [theme.breakpoints.down("sm")]: {
-      width: "100%",
+  },
+  textInput: {
+    [theme.breakpoints.down("xs")]: {
+      width: "250px",
     },
   },
 }));

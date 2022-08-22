@@ -2,9 +2,12 @@ import { makeStyles, Typography } from "@material-ui/core";
 import { Rating } from "@material-ui/lab";
 import React, { useState } from "react";
 import CustomButton from "../buttons";
+import { useDispatch } from "react-redux";
+import { setNext } from "../../features/ratingNextSlicer/ratingNextSlicer";
 
 const RatingCard = () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const [value, setValue] = useState(0);
 
   return (
@@ -23,7 +26,13 @@ const RatingCard = () => {
           setValue(newValue);
         }}
       />
-      <CustomButton variant="darkBlue" children="Next" />
+      <CustomButton
+        variant="darkBlue"
+        children="Next"
+        onClick={() => {
+          dispatch(setNext());
+        }}
+      />
     </div>
   );
 };

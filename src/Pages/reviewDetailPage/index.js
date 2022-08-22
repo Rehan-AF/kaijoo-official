@@ -4,9 +4,14 @@ import React from "react";
 import CustomerReview from "../../Components/customerRating";
 import RatingCard from "../../Components/rating";
 import ReviewDetails from "../../Components/reviewDetails";
+import { useSelector } from "react-redux";
+import ReviewTextEditor from "../../Components/reviewTextEditor";
 
 const Reviews = () => {
   const classes = useStyles();
+  const {
+    ratingNextSlicer: { data },
+  } = useSelector((state) => state);
   return (
     <div className={classes.container}>
       <ReviewDetails />
@@ -20,7 +25,15 @@ const Reviews = () => {
         <CustomerReview />
       </div>
       <div className={classes.ratingBox}>
-        <RatingCard />
+        {data ? (
+          <>
+            <ReviewTextEditor />
+          </>
+        ) : (
+          <>
+            <RatingCard />
+          </>
+        )}
       </div>
     </div>
   );
