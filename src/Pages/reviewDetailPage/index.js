@@ -1,6 +1,8 @@
 import { makeStyles } from "@material-ui/core";
+
 import React from "react";
 import CustomerReview from "../../Components/customerRating";
+import RatingCard from "../../Components/rating";
 import ReviewDetails from "../../Components/reviewDetails";
 
 const Reviews = () => {
@@ -16,6 +18,9 @@ const Reviews = () => {
         <CustomerReview />
         <CustomerReview />
         <CustomerReview />
+      </div>
+      <div className={classes.ratingBox}>
+        <RatingCard />
       </div>
     </div>
   );
@@ -35,5 +40,12 @@ const useStyles = makeStyles((theme) => ({
   },
   reviewBox: {
     boxShadow: "0px -5px 10px #00000012",
+  },
+  ratingBox: {
+    zIndex: 10,
+    position: "fixed",
+    width: "100%",
+    bottom: "0",
+    left: "0",
   },
 }));
