@@ -35,6 +35,7 @@ const ReviewTextEditor = () => {
       <Box className={classes.quickButton}>
         <CustomButton
           variant="outline"
+          className={classes.cancelBtn}
           onClick={() => {
             dispatch(setCancel());
           }}
@@ -69,10 +70,23 @@ const useStyles = makeStyles((theme) => ({
     padding: "1em",
   },
   submitBtn: {
-    padding: "10px 30px",
+    padding: "5px 30px",
     borderRadius: "25px",
     color: "#ffffff",
     fontWeight: "bold",
+    marginLeft: "5em",
+    [theme.breakpoints.down("xs")]: {
+      marginLeft: "2em",
+    },
+  },
+  cancelBtn: {
+    padding: "5px 20px",
+    borderRadius: "25px",
+
+    marginRight: "5em",
+    [theme.breakpoints.down("xs")]: {
+      marginRight: "2em",
+    },
   },
   quickMsg: {
     display: "flex",
@@ -81,7 +95,7 @@ const useStyles = makeStyles((theme) => ({
   },
   quickButton: {
     display: "flex",
-    justifyContent: "space-between",
+    justifyContent: "space-around",
     padding: "1em",
   },
   textBox: {
